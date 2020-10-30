@@ -1,5 +1,3 @@
-#!/usr/bin/env python
 class Solution:
-    # @return a string
-    def grayCode(self, n: int) -> List[int]:
-        return [i ^ i >> 1  for i in range(1 << n)]
+    def myAtoi(self, s: str) -> int:
+        return max(min(int(*re.findall('^[\+\-]?\d+', s.lstrip())), 2**31 - 1), -2**31)
