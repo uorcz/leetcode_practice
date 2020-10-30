@@ -1,14 +1,10 @@
 class Solution:
-    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
-        if not nums:
-            return []
-        res = []
-        len_nums = len(nums)
-        nums.sort()
-        def dfs(re,index):
-            if re not in res:
-                res.append(re)
-            for i in range(index,len_nums):
-                dfs(re+[nums[i]],i+1)
-        dfs([],0)
-        return res
+    def reverse(self, x: int) -> int:
+        if abs(x)>2147483647:
+            return 0
+        if int(str(abs(x))[::-1]) > 2147483647:
+            return 0
+        if x>0:
+            return int(str(x)[::-1])
+        else:
+            return int(str(-1*x)[::-1])*-1
